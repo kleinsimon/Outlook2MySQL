@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="BibTex2SQL.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+    </startup>
+    <userSettings>
+        <BibTex2SQL.Properties.Settings>
+            <setting name="server" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="port" serializeAs="String">
+                <value>3306</value>
+            </setting>
+            <setting name="database" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="user" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="password" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="table" serializeAs="String">
+                <value />
+            </setting>
+        </BibTex2SQL.Properties.Settings>
+    </userSettings>
+</configuration>
