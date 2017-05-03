@@ -285,17 +285,17 @@ namespace Contacts2SQL
                     ContactItem cIt = (ContactItem)tmp;
                     DataRow newRow = EntryTable.NewRow();
 
-                    newRow["Name"] = cIt.LastName;
-                    newRow["Vorname"] = cIt.FirstName;
-                    newRow["Titel"] = cIt.User2;
-                    newRow["Firma"] = cIt.CompanyName;
-                    newRow["Abteilung"] = cIt.Department;
-                    newRow["Strasse"] = cIt.BusinessAddressStreet;
-                    newRow["PLZ"] = cIt.BusinessAddressPostalCode;
-                    newRow["Ort"] = cIt.BusinessAddressCity;
-                    newRow["Telefon"] = cIt.BusinessTelephoneNumber;
-                    newRow["Fax"] = cIt.BusinessFaxNumber;
-                    newRow["E-Mail"] = cIt.Email1Address;
+                    newRow["Name"] = makeValidString(cIt.LastName);
+                    newRow["Vorname"] = makeValidString(cIt.FirstName);
+                    newRow["Titel"] = makeValidString(cIt.User2);
+                    newRow["Firma"] = makeValidString(cIt.CompanyName);
+                    newRow["Abteilung"] = makeValidString(cIt.Department);
+                    newRow["Strasse"] = makeValidString(cIt.BusinessAddressStreet);
+                    newRow["PLZ"] = makeValidString(cIt.BusinessAddressPostalCode);
+                    newRow["Ort"] = makeValidString(cIt.BusinessAddressCity);
+                    newRow["Telefon"] = makeValidString(cIt.BusinessTelephoneNumber);
+                    newRow["Fax"] = makeValidString(cIt.BusinessFaxNumber);
+                    newRow["E-Mail"] = makeValidString(cIt.Email1Address);
 
                     EntryTable.Rows.Add(newRow);
                 }
@@ -307,6 +307,15 @@ namespace Contacts2SQL
 
             EntryTable.EndLoadData();
             this.Cursor = Cursors.Default;
+        }
+
+        string makeValidString(string s)
+        {
+            if (s == null || s==string.Empty)
+            {
+                return " ";
+            }
+            return s;
         }
 
         void OL_AdvancedSearchComplete(Search SearchObject)
